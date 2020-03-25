@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>login_page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main1.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="login-box">
+    <h1>Login</h1>
+
+    <form action="" method=post>
+        <div class="textbox">
+            <p>
+                {{form.username.label(class="fas fa-lock")}}<br>
+                {{form.username(size=30)}}
+            </p>
+        </div>
+        <div class="textbox">
+            {{form.password.label(class="fas fa-lock")}}<br>
+            {{form.password(size=30)}}
+        </div>
+
+        <p>{{form.submit(class ="btn")}}</p>
+    </form>
+</div>
+{% endblock %}

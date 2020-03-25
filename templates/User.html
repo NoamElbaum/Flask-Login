@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head%}
+    <link rel="stylesheet" link="{{ url_for('static', filename='css/user.css')}}">
+    <title>user</title>
+{% endblock %}
+
+{% block body%}
+<h1>Welcome to your account</h1>
+<table border="1">
+    {% for key,value in result.items() %}
+        {%if key != 'submit' %}
+            <tr>
+                <th>
+                    {{key}}
+                </th>
+                <td>
+                    {{value}}
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+<h3><a href="/">Log out</a></h3>
+{% endblock %}
